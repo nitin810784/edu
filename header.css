@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    margin-top: 30px;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    color: white;
+    background-color: transparent;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.logo h1:hover {
+    color: #1eb2a6;
+}
+
+.opening-hours, .contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.opening-hours i, .contact-info i {
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.opening-hours div, .contact-info div {
+    font-size: 16px;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #1eb2a6;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+}
+
+/* Navigation styling */
+.nav-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    gap: 30px;
+    padding-left: 50px;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    font-weight: 550;
+    padding: 25px 0;
+}
+
+.nav-links li a:hover {
+    color: #05fbe6;
+}
+
+.nav-links li a.active {
+    color: #05fae6;
+}
+
+/* Get Certificate Styling */
+.get-certificate-container {
+    margin-left: auto;
+    position: relative;
+}
+
+.get-certificate {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    background: #1eb2a6;
+    padding: 1.5rem;
+    color: #fff;
+    border-radius: 0;
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    z-index: 0;
+    text-align: center;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    border: 2px solid #1eb2a6;
+}
+
+.get-certificate::before {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -20px;
+    width: 100px;
+    background: #1eb2a6;
+    transform: skewX(-20deg);
+    z-index: -1;
+    content: '';
+}
+
+/* Hover Effect */
+.get-certificate:hover {
+    color: white !important;
+}
+
+.hamburger-get-certificate {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .opening-hours, .contact-info {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 0;
+    }
+
+    .get-certificate-container {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: auto;
+        margin-top: 20px;
+        margin-right: 15px;
+    }
+
+    .nav-container.show .get-certificate-container {
+        display: block;
+        margin-left: 0;
+        order: -1;
+    }
+
+    .nav-container {
+        display: flex;
+        background-color: #1eb2a6;
+        padding-bottom: 20px;
+        margin-top: -25px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        align-items: normal;
+    }
+    
+    .nav-container.show .nav-links {
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .nav-links li{
+        margin-left: 10px;
+    }
+
+    .get-certificate {
+        display: none;
+    }
+
+    .hamburger-get-certificate {
+        display: flex;
+        background-color: #1eb2a6;
+        margin-top: 10px;
+    }
+    
+    .hamburger-get-certificate-container a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+        font-weight: 550;
+        padding: 25px 0;
+        background-color: #1cc8ba;
+    }
+
+    .ham-get-certificate {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        background: #1eb2a6;
+        padding: 1.5rem;
+        color: #fff;
+        border-radius: 0;
+        position: relative;
+        display: inline-block;
+        width: 250px;
+        z-index: 0;
+        text-align: center;
+        border: 1px solid transparent;
+        letter-spacing: 2px;
+        border: 2px solid #1eb2a6;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .get-certificate-container {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media (max-width: 444px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 384px) {
+    .social-icons a {
+        padding: 0;
+    }
+
+    .social-icons .fab {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 325px) {
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    .social-icons .fab {
+        font-size: 15px;
+    }
+}
